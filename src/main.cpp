@@ -1,8 +1,11 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QQuickStyle>
 
 int main(int argc, char *argv[]) {
     QGuiApplication app(argc, argv);
+
+    QQuickStyle::setStyle(QStringLiteral("Material"));
 
     QQmlApplicationEngine engine;
     const QUrl url(u"qrc:/todoro/qml/main.qml"_qs);

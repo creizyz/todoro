@@ -4,7 +4,7 @@ project(todoro LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 6.2 REQUIRED COMPONENTS Quick)
+find_package(Qt6 6.2 REQUIRED COMPONENTS Quick QuickControls2)
 
 qt_standard_project_setup()
 
@@ -22,5 +22,8 @@ qt_add_qml_module(todoro
 )
 
 target_link_libraries(todoro
-        PRIVATE Qt6::Quick Qt6::Qml
+        PRIVATE
+        Qt6::Quick
+        Qt6::Qml
+        Qt6::QuickControls2
 )
